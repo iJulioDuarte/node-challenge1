@@ -1,5 +1,3 @@
-// middleware = interceptador (função que vai interceptar outra função e sempre vai receber req e res como parâmetros e tratará os mesmos)
-
 export const json = async (req, res) => {
     const buffers = []
 

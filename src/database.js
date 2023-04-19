@@ -1,9 +1,8 @@
 import fs from "node:fs/promises"
 import { URL } from "node:url"
 
-const databasePath = new URL("db.json", import.meta.url)
+export const databasePath = new URL("db.json", import.meta.url)
 
-console.log(databasePath);
 export class Database {
     // # define uma propriedade privada
     #database = {}
@@ -32,6 +31,11 @@ export class Database {
                 })
             })
         }
+
+        return data
+    }
+    selectById(table, id) {
+        const data = this.#database[table].find(row => row.id === id ) ?? []
 
         return data
     }
